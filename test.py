@@ -42,7 +42,7 @@ for product in products:
 	print ("Produkt: {:8} Antal: {}st  Pris: {:>7} kr".format(product.name, product.count, round(product.price_incl_tax(),0)))
 
 #break line
-print("\n") 
+#print("\n") 
 
 #streckad linje
 print("-"*80) 
