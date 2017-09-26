@@ -11,9 +11,13 @@ class Product:
 
 products = [Product (price=900, count=2, tax= 1.25), Product(price=100, count=1, tax=1.06)]
 
-total_price = products[0].price_incl_tax() + products[1].price_incl_tax()
+total_price = 0
 
-print(total_price)
+for product in products:
+	total_price = total_price + product.price_incl_tax()
+
+print (total_price)
+
 
 
 
