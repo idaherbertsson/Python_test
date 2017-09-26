@@ -14,6 +14,13 @@ class Product:
 		else:
 			return total 
 
+	def tax_per_product(self):
+		totaltax = self.price*self.count*self.tax-self.count*self.price
+		if self.price*self.count*self.tax > 500:
+			return 0.9*totaltax
+		else:
+			return totaltax
+
 
 products = [
 Product (name = "Robot", price=900, count=2, tax= 1.25), 
@@ -22,14 +29,23 @@ Product (name = "Freight", price = 470, count = 1, tax=1.12)
 ]
 
 total_price = 0
-
 for product in products:
 	total_price = total_price + product.price_incl_tax()
 
+total_tax = 0 
+for product in products:
+	total_tax = total_tax + product.tax_per_product()
+
+print("\n")
 
 for product in products:
 	print ("Produkt: {:8} Antal: {}st  Pris: {:>7} kr".format(product.name, product.count, round(product.price_incl_tax(),0)))
 
-print("-"*80)
+#break line
+print("\n") 
 
-print ("Total summa: {:>29} kr".format(round(total_price, 0)))
+#streckad linje
+print("-"*80) 
+
+print ("Total summa: {:>30} kr".format(round(total_price, 0)))
+print ("Varav moms: {:>31} kr". format(round(total_tax,0)))
