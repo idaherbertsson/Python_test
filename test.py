@@ -4,7 +4,7 @@ class Product:
 		self.price = price
 		self.count = count
 		self.tax = tax
-		self.name = "product name"
+		self.name = name
 		
 
 	def price_incl_tax(self):
@@ -26,7 +26,14 @@ total_price = 0
 for product in products:
 	total_price = total_price + product.price_incl_tax()
 
+
 print (total_price)
+
+
+for product in products:
+	print (product.name, product.price_incl_tax())
+
+
 
 
 
