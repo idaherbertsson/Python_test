@@ -4,7 +4,7 @@ class Product:
 	tax = 1.25
 
 	def price_incl_tax(self):
-		return(self.price * self.count * self.tax)
+		return(self.price * self.tax)
 
 
 robot = Product()
@@ -17,6 +17,6 @@ book.count = 1
 book.tax = 1.06
 
 
-print(robot.price_incl_tax()+book.price_incl_tax())
+print(robot.price_incl_tax()*robot.count +book.price_incl_tax()*book.count)
 
 
